@@ -23,19 +23,20 @@ div#calculator {
 /* WYŚWIETLANY WYNIK */
 
 div#view {
-  flex-basis: 70px;
   background-color: #ccc;
+  border-bottom: 5px solid black;
+  flex-basis: 20%;
 }
 
 div#view span#result {
   font-size: 30px;
+  padding: 10px;
 }
 
 /* PANEL Z LICZBAMI  */
 
 div#panel {
   display: flex;
-  flex-grow: 1;
   background-color: red;
   flex-direction: row;
 }
@@ -45,7 +46,7 @@ div#panel div#numbers {
 }
 
 div#panel div#numbers button#clear {
-  width: 99%;
+  width: 100%;
 }
 
 div#panel div#numbers button {
@@ -53,8 +54,15 @@ div#panel div#numbers button {
   padding: 20px;
   background-color: white;
   color: black;
-  width: 33%;
-  border-style: none;
+  width: 33.3%;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+div#panel div#numbers button:hover {
+  background-color: black;
+  color: white;
 }
 
 /* PANEL Z OPERACJAMI */
@@ -69,9 +77,16 @@ div#panel div#operations button {
   padding: 20px;
   background-color: red;
   color: white;
-  border-style: none;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: 0.1s;
 }
 
 div#panel div#operations button#minus {
   border-top: 1px solid black;
+}
+
+div#panel div#operations button:hover {
+  background-color: white;
+  color: red;
 }
