@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fruktur", cursive;
+}
+
+body {
+  position: relative;
+}
+
+/* CAŁY KALKULATOR */
+
+div#calculator {
+  margin: 50px;
+  display: flex;
+  border: 5px solid black;
+  height: 380px;
+  width: 250px;
+  flex-direction: column;
+}
+
+/* WYŚWIETLANY WYNIK */
+
+div#view {
+  flex-basis: 70px;
+  background-color: #ccc;
+}
+
+div#view span#result {
+  font-size: 30px;
+}
+
+/* PANEL Z LICZBAMI  */
+
+div#panel {
+  display: flex;
+  flex-grow: 1;
+  background-color: red;
+  flex-direction: row;
+}
+
+div#panel div#numbers {
+  flex-basis: 80%;
+}
+
+div#panel div#numbers button#clear {
+  width: 99%;
+}
+
+div#panel div#numbers button {
+  font-size: 30px;
+  padding: 20px;
+  background-color: white;
+  color: black;
+  width: 33%;
+  border-style: none;
+}
+
+/* PANEL Z OPERACJAMI */
+
+div#panel div#operations {
+  flex-basis: 20%;
+}
+
+div#panel div#operations button {
+  font-size: 30px;
+  width: 100%;
+  padding: 20px;
+  background-color: red;
+  color: white;
+  border-style: none;
+}
+
+div#panel div#operations button#minus {
+  border-top: 1px solid black;
+}
