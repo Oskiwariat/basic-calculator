@@ -3,18 +3,40 @@ import React from "react";
 import "../styles/Calculator.css";
 
 class Calculator extends React.Component {
+  state = {
+    score: 0,
+    firstNumber: null,
+    secondNumber: null,
+  };
+
+  handleClearButton = () => {
+    this.setState({
+      score: 0,
+    });
+  };
+
+  handleOneButton = () => {
+    this.setState((prevState) => ({
+      score: prevState.score + 1,
+    }));
+  };
+
   render() {
     return (
       <>
         <div id="calculator">
           <div id="view">
-            <span id="result">0</span>
+            <span id="result">{this.state.score}</span>
           </div>
 
           <div id="panel">
             <div id="numbers">
-              <button id="clear">clear</button>
-              <button id="one">1</button>
+              <button onClick={this.handleClearButton} id="clear">
+                clear
+              </button>
+              <button onClick={this.handleOneButton} id="one">
+                1
+              </button>
               <button id="two">2</button>
               <button id="three">3</button>
               <button id="four">4</button>
