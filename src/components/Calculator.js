@@ -4,21 +4,49 @@ import "../styles/Calculator.css";
 
 class Calculator extends React.Component {
   state = {
-    score: 0,
-    firstNumber: null,
-    secondNumber: null,
+    score: "",
+    firstAmount: null,
+    // secondAmount: null,
   };
 
   handleClearButton = () => {
     this.setState({
-      score: 0,
+      score: "",
+      firstAmount: null,
+      secondAmount: null,
     });
   };
 
-  handleOneButton = () => {
+  // handleOneButton = () => {
+  //   this.setState((prevState) => ({
+  //     score: (prevState.score += "1"),
+  //   }));
+  // };
+
+  // handleTwoButton = () => {
+  //   this.setState((prevState) => ({
+  //     score: (prevState.score += "2"),
+  //   }));
+  // };
+
+  handleNumberButton = (e) => {
+    const name = e.target.name;
+    if (name === "one") {
+      console.log("jeden");
+    }
+  };
+
+  handlePlusButton = () => {
     this.setState((prevState) => ({
-      score: prevState.score + 1,
+      firstAmount: prevState.score,
+      score: "",
     }));
+  };
+
+  handleEqualSignButton = () => {
+    this.setState({
+      score: Number(this.state.firstAmount) + Number(this.state.score),
+    });
   };
 
   render() {
@@ -34,10 +62,12 @@ class Calculator extends React.Component {
               <button onClick={this.handleClearButton} id="clear">
                 clear
               </button>
-              <button onClick={this.handleOneButton} id="one">
+              <button onClick={this.handleNumberButton} name="one" id="one">
                 1
               </button>
-              <button id="two">2</button>
+              <button onClick={this.handleNumberButton} name="two" id="two">
+                2
+              </button>
               <button id="three">3</button>
               <button id="four">4</button>
               <button id="five">5</button>
@@ -49,9 +79,13 @@ class Calculator extends React.Component {
 
             <div id="operations">
               <button id="minus">-</button>
-              <button id="plus">+</button>
+              <button onClick={this.handlePlusButton} id="plus">
+                +
+              </button>
               <button id="division">/</button>
-              <button id="score">=</button>
+              <button onClick={this.handleEqualSignButton} id="score">
+                =
+              </button>
             </div>
           </div>
         </div>
