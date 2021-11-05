@@ -6,33 +6,32 @@ class Calculator extends React.Component {
   state = {
     score: "",
     firstAmount: null,
-    // secondAmount: null,
   };
 
   handleClearButton = () => {
     this.setState({
       score: "",
       firstAmount: null,
-      secondAmount: null,
     });
   };
 
-  // handleOneButton = () => {
-  //   this.setState((prevState) => ({
-  //     score: (prevState.score += "1"),
-  //   }));
-  // };
-
-  // handleTwoButton = () => {
-  //   this.setState((prevState) => ({
-  //     score: (prevState.score += "2"),
-  //   }));
-  // };
-
   handleNumberButton = (e) => {
     const name = e.target.name;
-    if (name === "one") {
-      console.log("jeden");
+    const value = e.target.value;
+    if (
+      name === "one" ||
+      name === "two" ||
+      name === "three" ||
+      name === "four" ||
+      name === "five" ||
+      name === "six" ||
+      name === "seven" ||
+      name === "eight" ||
+      name === "nine"
+    ) {
+      this.setState((prevState) => ({
+        score: (prevState.score += value),
+      }));
     }
   };
 
@@ -46,6 +45,7 @@ class Calculator extends React.Component {
   handleEqualSignButton = () => {
     this.setState({
       score: Number(this.state.firstAmount) + Number(this.state.score),
+      firstAmount: null,
     });
   };
 
@@ -62,19 +62,78 @@ class Calculator extends React.Component {
               <button onClick={this.handleClearButton} id="clear">
                 clear
               </button>
-              <button onClick={this.handleNumberButton} name="one" id="one">
+              <button
+                onClick={this.handleNumberButton}
+                name="one"
+                value="1"
+                id="one"
+              >
                 1
               </button>
-              <button onClick={this.handleNumberButton} name="two" id="two">
+              <button
+                onClick={this.handleNumberButton}
+                name="two"
+                value="2"
+                id="two"
+              >
                 2
               </button>
-              <button id="three">3</button>
-              <button id="four">4</button>
-              <button id="five">5</button>
-              <button id="six">6</button>
-              <button id="seven">7</button>
-              <button id="eight">8</button>
-              <button id="nine">9</button>
+              <button
+                onClick={this.handleNumberButton}
+                name="three"
+                value="3"
+                id="three"
+              >
+                3
+              </button>
+              <button
+                onClick={this.handleNumberButton}
+                name="four"
+                value="4"
+                id="four"
+              >
+                4
+              </button>
+              <button
+                onClick={this.handleNumberButton}
+                name="five"
+                value="5"
+                id="five"
+              >
+                5
+              </button>
+              <button
+                onClick={this.handleNumberButton}
+                name="six"
+                value="6"
+                id="six"
+              >
+                6
+              </button>
+              <button
+                onClick={this.handleNumberButton}
+                name="seven"
+                value="7"
+                id="seven"
+              >
+                7
+              </button>
+              <button
+                onClick={this.handleNumberButton}
+                name="eight"
+                value="8"
+                id="eight"
+              >
+                8
+              </button>
+              <button
+                onClick={this.handleNumberButton}
+                name="nine"
+                value="9"
+                id="nine"
+              >
+                9
+              </button>
             </div>
 
             <div id="operations">
