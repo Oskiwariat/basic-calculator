@@ -20,6 +20,7 @@ class Calculator extends React.Component {
   handleNumberButton = (e) => {
     const { name, value } = e.target;
     if (
+      name === "zero" ||
       name === "one" ||
       name === "two" ||
       name === "three" ||
@@ -64,6 +65,12 @@ class Calculator extends React.Component {
         firstAmount: prevState.score,
         score: "",
       }));
+    } else if (name === "multiply") {
+      this.setState((prevState) => ({
+        type: "multiply",
+        firstAmount: prevState.score,
+        score: "",
+      }));
     }
   };
 
@@ -95,7 +102,12 @@ class Calculator extends React.Component {
       });
     } else if (type === "division") {
       this.setState({
-        score: (Number(firstAmount) / Number(score)).toFixed(2),
+        score: (Number(firstAmount) / Number(score)).toFixed(1),
+        firstAmount: null,
+      });
+    } else if (type === "multiply") {
+      this.setState({
+        score: (Number(firstAmount) * Number(score)).toFixed(1),
         firstAmount: null,
       });
     }
@@ -141,6 +153,14 @@ class Calculator extends React.Component {
               <button onClick={this.handleNumberButton} name="nine" value="9">
                 9
               </button>
+              <button
+                onClick={this.handleNumberButton}
+                id="zero"
+                name="zero"
+                value="0"
+              >
+                0
+              </button>
             </div>
 
             <div id="operations">
@@ -152,6 +172,9 @@ class Calculator extends React.Component {
               </button>
               <button onClick={this.handleOperationButton} name="division">
                 /
+              </button>
+              <button onClick={this.handleOperationButton} name="multiply">
+                *
               </button>
               <button onClick={this.handleEqualSignButton} id="score">
                 =

@@ -4,7 +4,7 @@ div#calculator {
   margin: 50px;
   display: flex;
   border: 5px solid black;
-  height: 380px;
+  height: 460px;
   width: 250px;
   flex-direction: column;
   overflow: hidden;
@@ -37,6 +37,10 @@ div#panel div#numbers {
 }
 
 div#panel div#numbers button#clear {
+  width: 100%;
+}
+
+div#panel div#numbers button#zero {
   width: 100%;
 }
 
