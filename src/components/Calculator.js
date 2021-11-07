@@ -102,12 +102,12 @@ class Calculator extends React.Component {
       });
     } else if (type === "division") {
       this.setState({
-        score: (Number(firstAmount) / Number(score)).toFixed(1),
+        score: Number(firstAmount) / Number(score),
         firstAmount: null,
       });
     } else if (type === "multiply") {
       this.setState({
-        score: (Number(firstAmount) * Number(score)).toFixed(1),
+        score: Number(firstAmount) * Number(score),
         firstAmount: null,
       });
     }
@@ -116,70 +116,84 @@ class Calculator extends React.Component {
   render() {
     return (
       <>
-        <h1 id="title">Calculator</h1>
-        <div id="calculator">
-          <div id="view">
-            <span id="result">{this.state.score}</span>
-          </div>
-
-          <div id="panel">
-            <div id="numbers">
-              <button onClick={this.handleClearButton} id="clear">
-                clear
-              </button>
-              <button onClick={this.handleNumberButton} name="one" value="1">
-                1
-              </button>
-              <button onClick={this.handleNumberButton} name="two" value="2">
-                2
-              </button>
-              <button onClick={this.handleNumberButton} name="three" value="3">
-                3
-              </button>
-              <button onClick={this.handleNumberButton} name="four" value="4">
-                4
-              </button>
-              <button onClick={this.handleNumberButton} name="five" value="5">
-                5
-              </button>
-              <button onClick={this.handleNumberButton} name="six" value="6">
-                6
-              </button>
-              <button onClick={this.handleNumberButton} name="seven" value="7">
-                7
-              </button>
-              <button onClick={this.handleNumberButton} name="eight" value="8">
-                8
-              </button>
-              <button onClick={this.handleNumberButton} name="nine" value="9">
-                9
-              </button>
-              <button
-                onClick={this.handleNumberButton}
-                id="zero"
-                name="zero"
-                value="0"
-              >
-                0
-              </button>
+        <div id="wrap">
+          <h1 id="title">Calculator</h1>
+          <div id="calculator">
+            <div id="view">
+              <span id="result">{this.state.score}</span>
             </div>
 
-            <div id="operations">
-              <button onClick={this.handleOperationButton} name="addition">
-                +
-              </button>
-              <button onClick={this.handleOperationButton} name="subtraction">
-                -
-              </button>
-              <button onClick={this.handleOperationButton} name="division">
-                /
-              </button>
-              <button onClick={this.handleOperationButton} name="multiply">
-                *
-              </button>
-              <button onClick={this.handleEqualSignButton} id="score">
-                =
-              </button>
+            <div id="panel">
+              <div id="numbers">
+                <button onClick={this.handleClearButton} id="clear">
+                  clear
+                </button>
+                <button onClick={this.handleNumberButton} name="one" value="1">
+                  1
+                </button>
+                <button onClick={this.handleNumberButton} name="two" value="2">
+                  2
+                </button>
+                <button
+                  onClick={this.handleNumberButton}
+                  name="three"
+                  value="3"
+                >
+                  3
+                </button>
+                <button onClick={this.handleNumberButton} name="four" value="4">
+                  4
+                </button>
+                <button onClick={this.handleNumberButton} name="five" value="5">
+                  5
+                </button>
+                <button onClick={this.handleNumberButton} name="six" value="6">
+                  6
+                </button>
+                <button
+                  onClick={this.handleNumberButton}
+                  name="seven"
+                  value="7"
+                >
+                  7
+                </button>
+                <button
+                  onClick={this.handleNumberButton}
+                  name="eight"
+                  value="8"
+                >
+                  8
+                </button>
+                <button onClick={this.handleNumberButton} name="nine" value="9">
+                  9
+                </button>
+                <button
+                  onClick={this.handleNumberButton}
+                  id="zero"
+                  name="zero"
+                  value="0"
+                >
+                  0
+                </button>
+              </div>
+
+              <div id="operations">
+                <button onClick={this.handleOperationButton} name="addition">
+                  +
+                </button>
+                <button onClick={this.handleOperationButton} name="subtraction">
+                  -
+                </button>
+                <button onClick={this.handleOperationButton} name="division">
+                  /
+                </button>
+                <button onClick={this.handleOperationButton} name="multiply">
+                  *
+                </button>
+                <button onClick={this.handleEqualSignButton} id="score">
+                  =
+                </button>
+              </div>
             </div>
           </div>
         </div>

@@ -1,39 +1,61 @@
-/* TYTUŁOWA H1 */
+/* CAŁY KALKULATOR */
 
 h1#title {
-  position: absolute;
-  top: -20%;
-  left: 45%;
+  color: white;
   text-transform: uppercase;
   letter-spacing: 3px;
   font-size: 50px;
 }
 
-/* CAŁY KALKULATOR */
+div#wrap {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 30px;
+  height: 700px;
+  width: 500px;
+  opacity: 0.5;
+  margin-top: 153.5px;
+  border: 3px solid white;
+  text-align: center;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  transition: 0.3s;
+}
+
+div#wrap:hover {
+  opacity: 1;
+  cursor: pointer;
+  border-radius: 10%;
+  width: 550px;
+}
 
 div#calculator {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
-  border: 5px solid black;
   height: 460px;
   width: 250px;
   flex-direction: column;
   overflow: hidden;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 273.5px;
 }
 
 /* WYŚWIETLANY WYNIK */
 
 div#view {
-  background-color: #ccc;
-  border-bottom: 5px solid black;
-  flex-basis: 20%;
+  background-color: white;
+  margin-bottom: 15px;
 }
 
 div#view span#result {
   font-size: 30px;
-  padding: 2px;
+  padding: 0.1px;
   line-height: 150%;
 }
 
@@ -41,8 +63,6 @@ div#view span#result {
 
 div#panel {
   display: flex;
-  background-color: red;
-  flex-direction: row;
 }
 
 div#panel div#numbers {
@@ -51,6 +71,8 @@ div#panel div#numbers {
 
 div#panel div#numbers button#clear {
   width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 div#panel div#numbers button#zero {
@@ -88,10 +110,6 @@ div#panel div#operations button {
   border: 1px solid black;
   cursor: pointer;
   transition: 0.1s;
-}
-
-div#panel div#operations button#minus {
-  border-top: 1px solid black;
 }
 
 div#panel div#operations button:hover {
