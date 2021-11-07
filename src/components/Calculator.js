@@ -18,8 +18,7 @@ class Calculator extends React.Component {
   };
 
   handleNumberButton = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
+    const { name, value } = e.target;
     if (
       name === "one" ||
       name === "two" ||
@@ -37,28 +36,35 @@ class Calculator extends React.Component {
     }
   };
 
-  handlePlusButton = () => {
-    this.setState((prevState) => ({
-      type: "addition",
-      firstAmount: prevState.score,
-      score: "",
-    }));
-  };
+  handleOperationButton = (e) => {
+    const name = e.target.name;
+    const score = this.state.score;
 
-  handleMinusButton = () => {
-    this.setState((prevState) => ({
-      type: "subtraction",
-      firstAmount: prevState.score,
-      score: "",
-    }));
-  };
+    if (score === "") {
+      return alert(
+        "Najpierw wpisz liczbe! Dopiero potem wybierz znak operacji!"
+      );
+    }
 
-  handleDivisionButton = () => {
-    this.setState((prevState) => ({
-      type: "division",
-      firstAmount: prevState.score,
-      score: "",
-    }));
+    if (name === "addition") {
+      this.setState((prevState) => ({
+        type: "addition",
+        firstAmount: prevState.score,
+        score: "",
+      }));
+    } else if (name === "subtraction") {
+      this.setState((prevState) => ({
+        type: "subtraction",
+        firstAmount: prevState.score,
+        score: "",
+      }));
+    } else if (name === "division") {
+      this.setState((prevState) => ({
+        type: "division",
+        firstAmount: prevState.score,
+        score: "",
+      }));
+    }
   };
 
   handleEqualSignButton = () => {
@@ -68,9 +74,11 @@ class Calculator extends React.Component {
       return alert(
         "Nie wybrałeś co chcesz zrobić!. Dodać, odjąć czy podzielić?"
       );
-    } else if (score.length > 13) {
+    } else if (firstAmount.length > 13) {
       this.setState({
         score: "",
+        type: null,
+        firstAmount: null,
       });
       return alert(
         "Niestety nie mogliśmy przeprowadzić tego działania. Ten kalkulator nie wyświetla więcej niż 13 liczb na ekranie! Spróbuj wykonywać odrobinę mniejsze działania!"
@@ -87,7 +95,7 @@ class Calculator extends React.Component {
       });
     } else if (type === "division") {
       this.setState({
-        score: (Number(firstAmount) / Number(score)).toFixed(3),
+        score: (Number(firstAmount) / Number(score)).toFixed(2),
         firstAmount: null,
       });
     }
@@ -181,18 +189,22 @@ class Calculator extends React.Component {
             </div>
 
             <div id="operations">
-              <button onClick={this.handlePlusButton} name="addition" id="plus">
+              <button
+                onClick={this.handleOperationButton}
+                name="addition"
+                id="plus"
+              >
                 +
               </button>
               <button
-                onClick={this.handleMinusButton}
+                onClick={this.handleOperationButton}
                 name="subtraction"
                 id="minus"
               >
                 -
               </button>
               <button
-                onClick={this.handleDivisionButton}
+                onClick={this.handleOperationButton}
                 name="division"
                 id="division"
               >
