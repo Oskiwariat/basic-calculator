@@ -61,13 +61,6 @@ class Calculator extends React.Component {
     }));
   };
 
-  // handleEqualSignButton = () => {
-  //   this.setState({
-  //     score: Number(this.state.firstAmount) - Number(this.state.score),
-  //     firstAmount: null,
-  //   });
-  // };
-
   handleEqualSignButton = () => {
     let type = this.state.type;
     if (type === "addition") {
@@ -78,6 +71,13 @@ class Calculator extends React.Component {
     } else if (type === "subtraction") {
       this.setState({
         score: Number(this.state.firstAmount) - Number(this.state.score),
+        firstAmount: null,
+      });
+    } else if (type === "division") {
+      this.setState({
+        score: (
+          Number(this.state.firstAmount) / Number(this.state.score)
+        ).toFixed(3),
         firstAmount: null,
       });
     }
