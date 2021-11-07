@@ -6,12 +6,14 @@ class Calculator extends React.Component {
   state = {
     score: "",
     firstAmount: null,
+    type: null,
   };
 
   handleClearButton = () => {
     this.setState({
       score: "",
       firstAmount: null,
+      type: null,
     });
   };
 
@@ -37,16 +39,48 @@ class Calculator extends React.Component {
 
   handlePlusButton = () => {
     this.setState((prevState) => ({
+      type: "addition",
       firstAmount: prevState.score,
       score: "",
     }));
   };
 
+  handleMinusButton = () => {
+    this.setState((prevState) => ({
+      type: "subtraction",
+      firstAmount: prevState.score,
+      score: "",
+    }));
+  };
+
+  handleDivisionButton = () => {
+    this.setState((prevState) => ({
+      type: "division",
+      firstAmount: prevState.score,
+      score: "",
+    }));
+  };
+
+  // handleEqualSignButton = () => {
+  //   this.setState({
+  //     score: Number(this.state.firstAmount) - Number(this.state.score),
+  //     firstAmount: null,
+  //   });
+  // };
+
   handleEqualSignButton = () => {
-    this.setState({
-      score: Number(this.state.firstAmount) + Number(this.state.score),
-      firstAmount: null,
-    });
+    let type = this.state.type;
+    if (type === "addition") {
+      this.setState({
+        score: Number(this.state.firstAmount) + Number(this.state.score),
+        firstAmount: null,
+      });
+    } else if (type === "subtraction") {
+      this.setState({
+        score: Number(this.state.firstAmount) - Number(this.state.score),
+        firstAmount: null,
+      });
+    }
   };
 
   render() {
@@ -137,11 +171,23 @@ class Calculator extends React.Component {
             </div>
 
             <div id="operations">
-              <button id="minus">-</button>
-              <button onClick={this.handlePlusButton} id="plus">
+              <button onClick={this.handlePlusButton} name="addition" id="plus">
                 +
               </button>
-              <button id="division">/</button>
+              <button
+                onClick={this.handleMinusButton}
+                name="subtraction"
+                id="minus"
+              >
+                -
+              </button>
+              <button
+                onClick={this.handleDivisionButton}
+                name="division"
+                id="division"
+              >
+                /
+              </button>
               <button onClick={this.handleEqualSignButton} id="score">
                 =
               </button>
