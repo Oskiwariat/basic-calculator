@@ -114,100 +114,43 @@ class Calculator extends React.Component {
               <button onClick={this.handleClearButton} id="clear">
                 clear
               </button>
-              <button
-                onClick={this.handleNumberButton}
-                name="one"
-                value="1"
-                id="one"
-              >
+              <button onClick={this.handleNumberButton} name="one" value="1">
                 1
               </button>
-              <button
-                onClick={this.handleNumberButton}
-                name="two"
-                value="2"
-                id="two"
-              >
+              <button onClick={this.handleNumberButton} name="two" value="2">
                 2
               </button>
-              <button
-                onClick={this.handleNumberButton}
-                name="three"
-                value="3"
-                id="three"
-              >
+              <button onClick={this.handleNumberButton} name="three" value="3">
                 3
               </button>
-              <button
-                onClick={this.handleNumberButton}
-                name="four"
-                value="4"
-                id="four"
-              >
+              <button onClick={this.handleNumberButton} name="four" value="4">
                 4
               </button>
-              <button
-                onClick={this.handleNumberButton}
-                name="five"
-                value="5"
-                id="five"
-              >
+              <button onClick={this.handleNumberButton} name="five" value="5">
                 5
               </button>
-              <button
-                onClick={this.handleNumberButton}
-                name="six"
-                value="6"
-                id="six"
-              >
+              <button onClick={this.handleNumberButton} name="six" value="6">
                 6
               </button>
-              <button
-                onClick={this.handleNumberButton}
-                name="seven"
-                value="7"
-                id="seven"
-              >
+              <button onClick={this.handleNumberButton} name="seven" value="7">
                 7
               </button>
-              <button
-                onClick={this.handleNumberButton}
-                name="eight"
-                value="8"
-                id="eight"
-              >
+              <button onClick={this.handleNumberButton} name="eight" value="8">
                 8
               </button>
-              <button
-                onClick={this.handleNumberButton}
-                name="nine"
-                value="9"
-                id="nine"
-              >
+              <button onClick={this.handleNumberButton} name="nine" value="9">
                 9
               </button>
             </div>
 
             <div id="operations">
-              <button
-                onClick={this.handleOperationButton}
-                name="addition"
-                id="plus"
-              >
+              <button onClick={this.handleOperationButton} name="addition">
                 +
               </button>
-              <button
-                onClick={this.handleOperationButton}
-                name="subtraction"
-                id="minus"
-              >
+              <button onClick={this.handleOperationButton} name="subtraction">
                 -
               </button>
-              <button
-                onClick={this.handleOperationButton}
-                name="division"
-                id="division"
-              >
+              <button onClick={this.handleOperationButton} name="division">
                 /
               </button>
               <button onClick={this.handleEqualSignButton} id="score">
