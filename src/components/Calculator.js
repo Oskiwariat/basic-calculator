@@ -62,22 +62,32 @@ class Calculator extends React.Component {
   };
 
   handleEqualSignButton = () => {
-    let type = this.state.type;
-    if (type === "addition") {
+    const { type, firstAmount, score } = this.state;
+
+    if (type === null) {
+      return alert(
+        "Nie wybrałeś co chcesz zrobić!. Dodać, odjąć czy podzielić?"
+      );
+    } else if (score.length > 13) {
       this.setState({
-        score: Number(this.state.firstAmount) + Number(this.state.score),
+        score: "",
+      });
+      return alert(
+        "Niestety nie mogliśmy przeprowadzić tego działania. Ten kalkulator nie wyświetla więcej niż 13 liczb na ekranie! Spróbuj wykonywać odrobinę mniejsze działania!"
+      );
+    } else if (type === "addition") {
+      this.setState({
+        score: Number(firstAmount) + Number(score),
         firstAmount: null,
       });
     } else if (type === "subtraction") {
       this.setState({
-        score: Number(this.state.firstAmount) - Number(this.state.score),
+        score: Number(firstAmount) - Number(score),
         firstAmount: null,
       });
     } else if (type === "division") {
       this.setState({
-        score: (
-          Number(this.state.firstAmount) / Number(this.state.score)
-        ).toFixed(3),
+        score: (Number(firstAmount) / Number(score)).toFixed(3),
         firstAmount: null,
       });
     }
