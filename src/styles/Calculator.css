@@ -1,13 +1,26 @@
+/* TYTUŁOWA H1 */
+
+h1#title {
+  position: absolute;
+  top: -20%;
+  left: 45%;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 50px;
+}
+
 /* CAŁY KALKULATOR */
 
 div#calculator {
-  margin: 50px;
   display: flex;
   border: 5px solid black;
   height: 460px;
   width: 250px;
   flex-direction: column;
   overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 273.5px;
 }
 
 /* WYŚWIETLANY WYNIK */

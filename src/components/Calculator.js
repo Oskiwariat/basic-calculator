@@ -116,6 +116,7 @@ class Calculator extends React.Component {
   render() {
     return (
       <>
+        <h1 id="title">Calculator</h1>
         <div id="calculator">
           <div id="view">
             <span id="result">{this.state.score}</span>
