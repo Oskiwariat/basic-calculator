@@ -1,13 +1,6 @@
 /* CAŁY KALKULATOR */
 
-h1#title {
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 50px;
-}
-
-div#wrap {
+.calculator {
   position: absolute;
   left: 50%;
   transform: translate(-50%);
@@ -27,14 +20,21 @@ div#wrap {
   transition: 0.3s;
 }
 
-div#wrap:hover {
+.calculator:hover {
   opacity: 1;
   cursor: pointer;
   border-radius: 10%;
   width: 550px;
 }
 
-div#calculator {
+.calculator__title {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 50px;
+}
+
+.calculator__body {
   position: absolute;
   top: 55%;
   left: 50%;
@@ -48,12 +48,12 @@ div#calculator {
 
 /* WYŚWIETLANY WYNIK */
 
-div#view {
+.view {
   background-color: white;
   margin-bottom: 15px;
 }
 
-div#view span#result {
+.view__result {
   font-size: 30px;
   padding: 0.1px;
   line-height: 150%;
@@ -61,25 +61,15 @@ div#view span#result {
 
 /* PANEL Z LICZBAMI  */
 
-div#panel {
+.panel {
   display: flex;
 }
 
-div#panel div#numbers {
+.panel__numbers {
   flex-basis: 80%;
 }
 
-div#panel div#numbers button#clear {
-  width: 100%;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-div#panel div#numbers button#zero {
-  width: 100%;
-}
-
-div#panel div#numbers button {
+.panel__numbers-button {
   font-size: 30px;
   padding: 20px;
   background-color: white;
@@ -90,18 +80,30 @@ div#panel div#numbers button {
   transition: 0.1s;
 }
 
-div#panel div#numbers button:hover {
+.panel__numbers--clear {
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 30px;
+  padding: 20px;
+}
+
+.panel__numbers--zero {
+  width: 100%;
+}
+
+.panel__numbers-button:hover {
   background-color: black;
   color: white;
 }
 
 /* PANEL Z OPERACJAMI */
 
-div#panel div#operations {
+.panel__operations {
   flex-basis: 20%;
 }
 
-div#panel div#operations button {
+.panel__operations-button {
   font-size: 30px;
   width: 100%;
   padding: 20px;
@@ -112,7 +114,7 @@ div#panel div#operations button {
   transition: 0.1s;
 }
 
-div#panel div#operations button:hover {
+.panel__operations-button:hover {
   background-color: white;
   color: red;
 }

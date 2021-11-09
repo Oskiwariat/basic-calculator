@@ -116,41 +116,71 @@ class Calculator extends React.Component {
   render() {
     return (
       <>
-        <div id="wrap">
-          <h1 id="title">Calculator</h1>
-          <div id="calculator">
-            <div id="view">
-              <span id="result">{this.state.score}</span>
+        <div className="calculator">
+          <h1 className="calculator__title">Calculator</h1>
+          <div className="calculator__body">
+            <div className="view">
+              <span className="view__result">{this.state.score}</span>
             </div>
 
-            <div id="panel">
-              <div id="numbers">
-                <button onClick={this.handleClearButton} id="clear">
+            <div className="panel">
+              <div className="panel__numbers">
+                <button
+                  className="panel__numbers-button panel__numbers--clear"
+                  onClick={this.handleClearButton}
+                >
                   clear
                 </button>
-                <button onClick={this.handleNumberButton} name="one" value="1">
+                <button
+                  className="panel__numbers-button"
+                  onClick={this.handleNumberButton}
+                  name="one"
+                  value="1"
+                >
                   1
                 </button>
-                <button onClick={this.handleNumberButton} name="two" value="2">
+                <button
+                  className="panel__numbers-button"
+                  onClick={this.handleNumberButton}
+                  name="two"
+                  value="2"
+                >
                   2
                 </button>
                 <button
+                  className="panel__numbers-button"
                   onClick={this.handleNumberButton}
                   name="three"
                   value="3"
                 >
                   3
                 </button>
-                <button onClick={this.handleNumberButton} name="four" value="4">
+                <button
+                  className="panel__numbers-button"
+                  onClick={this.handleNumberButton}
+                  name="four"
+                  value="4"
+                >
                   4
                 </button>
-                <button onClick={this.handleNumberButton} name="five" value="5">
+                <button
+                  className="panel__numbers-button"
+                  onClick={this.handleNumberButton}
+                  name="five"
+                  value="5"
+                >
                   5
                 </button>
-                <button onClick={this.handleNumberButton} name="six" value="6">
+                <button
+                  className="panel__numbers-button"
+                  onClick={this.handleNumberButton}
+                  name="six"
+                  value="6"
+                >
                   6
                 </button>
                 <button
+                  className="panel__numbers-button"
                   onClick={this.handleNumberButton}
                   name="seven"
                   value="7"
@@ -158,18 +188,24 @@ class Calculator extends React.Component {
                   7
                 </button>
                 <button
+                  className="panel__numbers-button"
                   onClick={this.handleNumberButton}
                   name="eight"
                   value="8"
                 >
                   8
                 </button>
-                <button onClick={this.handleNumberButton} name="nine" value="9">
+                <button
+                  className="panel__numbers-button"
+                  onClick={this.handleNumberButton}
+                  name="nine"
+                  value="9"
+                >
                   9
                 </button>
                 <button
+                  className="panel__numbers-button panel__numbers--zero"
                   onClick={this.handleNumberButton}
-                  id="zero"
                   name="zero"
                   value="0"
                 >
@@ -177,20 +213,40 @@ class Calculator extends React.Component {
                 </button>
               </div>
 
-              <div id="operations">
-                <button onClick={this.handleOperationButton} name="addition">
+              <div className="panel__operations">
+                <button
+                  class="panel__operations-button"
+                  onClick={this.handleOperationButton}
+                  name="addition"
+                >
                   +
                 </button>
-                <button onClick={this.handleOperationButton} name="subtraction">
+                <button
+                  class="panel__operations-button"
+                  onClick={this.handleOperationButton}
+                  name="subtraction"
+                >
                   -
                 </button>
-                <button onClick={this.handleOperationButton} name="division">
+                <button
+                  class="panel__operations-button"
+                  onClick={this.handleOperationButton}
+                  name="division"
+                >
                   /
                 </button>
-                <button onClick={this.handleOperationButton} name="multiply">
+                <button
+                  class="panel__operations-button"
+                  onClick={this.handleOperationButton}
+                  name="multiply"
+                >
                   *
                 </button>
-                <button onClick={this.handleEqualSignButton} id="score">
+                <button
+                  class="panel__operations-button"
+                  onClick={this.handleEqualSignButton}
+                  id="score"
+                >
                   =
                 </button>
               </div>
