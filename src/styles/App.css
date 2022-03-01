@@ -7,5 +7,6 @@
 
 body {
   position: relative;
-  background: black;
+  background: red;
+  opacity: 0.5;
 }
