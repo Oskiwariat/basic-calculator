@@ -77,7 +77,7 @@
   width: 33.3%;
   border: 1px solid black;
   cursor: pointer;
-  transition: 0.1s;
+  transition: 0.2s;
 }
 
 .panel__numbers--clear {
